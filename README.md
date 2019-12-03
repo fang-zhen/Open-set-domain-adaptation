@@ -4,13 +4,14 @@
 
 3. For all VGG features, we use the following data preprocessing method:
 
-Xs = Xs ./ repmat(sum(Xs,2),1,size(Xs,2));
+   Xs = Xs ./ repmat(sum(Xs,2),1,size(Xs,2));
 
-Xt = Xt ./ repmat(sum(Xt,2),1,size(Xt,2));
+   Xt = Xt ./ repmat(sum(Xt,2),1,size(Xt,2));
 
-Xs=normr(zscore(Xs)); 
+   Xs=normr(zscore(Xs)); 
 
-Xt=normr(zscore(Xt));
-The preprocessing method was learned from JGSA https://documents.uow.edu.au/~jz960/.
+   Xt=normr(zscore(Xt));
+   
+   The preprocessing method was learned from JGSA https://documents.uow.edu.au/~jz960/.
 
 4. We will update our code and provide an official version after paper is accepted.
