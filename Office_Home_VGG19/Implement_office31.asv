@@ -1,0 +1,63 @@
+% Joint Geometrical and Statistical Alignment for Visual Domain Adaptation.
+% IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2017.
+% Jing Zhang, Wanqing Li, Philip Ogunbona.
+
+clear;close all;
+
+% Set algorithm parameters
+options.p = 10;%%%%manifold neighbour
+   
+options.eta = 1;    %%%%regularization
+    
+options.lambda = 50; %%%%%MMD regularization
+    
+options.rho = 1.0;   %%%%%mainfold regularization
+   
+options.T = 10;      %%%%iterations
+    
+options.t = 0.50;    %%%%%%threshold t
+    
+options.alpha = 0.40;%%%%%%open set parameters
+    
+options.beta = 0.20;%%%%%%open set parameters
+ 
+
+srcStrAlexnet7 = {'amazon',   'amazon',  'webcam',  'webcam', 'dslr',   'dslr'};
+tgtStrAlexnet7 = {'webcam',   'dslr',    'amazon',  'dslr',   'amazon', 'webcam'};
+
+
+
+
+datafeature = 'Alexnet7';
+
+
+results = [];
+for iData = 1:6
+
+    if strcmp(datafeature,'Alexnet7')
+        src = char(srcStrAlexnet7{iData});
+        tgt = char(tgtStrAlexnet7{iData});
+        options.data = strcat(src,'-vs-',tgt);
+        fprintf('Data=%s \n',options.data);
+
+
+        % load and preprocess data  
+        load(['C:\Users\Zhen Fang\Desktop\DAOD\Office-31\Data_office31\' src '_Al7.mat']);
+        Xs = fts; 
+        Ys = labels;
+       
+
+        load(['C:\Users\Zhen Fang\Desktop\DAOD\Office-31\Data_office31\' tgt '_Al7.mat']);
+        Xt = fts; 
+        Yt = labels;
+        
+        %choice known classes and unknown classes
+        [Xs,Xt,Ys,Yt]=datachoice(Xs,Xt,Ys,Yt,10,20);
+    else
+        break
+    end
+    [Acc_OS,Acc_OS_star,Yt_pred] = DAOD(Xs,Ys,Xt,Yt,options);   
+
+    results = [results;[Acc_OS,Acc_OS_star]];
+end
+Average=sum(results)/6;
