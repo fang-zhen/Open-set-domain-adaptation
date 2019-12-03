@@ -12,6 +12,6 @@
 
    Xt=normr(zscore(Xt));
    
-   The preprocessing method was learned from JGSA https://documents.uow.edu.au/~jz960/.
+   The preprocessing method follows JGSA https://documents.uow.edu.au/~jz960/.
 
-4. We will update our code and provide an official version after paper is accepted.
+
