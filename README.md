@@ -1,4 +1,4 @@
-1. One can implement code after changing the path. Implementation_XXXX is the main text.
+1.  Implementation_XXXX is the main text. All parameters have been tuned and fixed. One can implement code directly after changing the path.
 
 2. The features of Office-31, Office-Home and Imageclef-DA are extracted from deep models (pretrained without finetune).
 
