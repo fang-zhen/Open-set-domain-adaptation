@@ -3,6 +3,7 @@
 2. The features of Office-31, Office-Home and Imageclef-DA are extracted from deep models (pretrained without finetune).
 
 3. For all VGG features, we use the following data preprocessing method:
+
 Xs = Xs ./ repmat(sum(Xs,2),1,size(Xs,2));
 
 Xt = Xt ./ repmat(sum(Xt,2),1,size(Xt,2));
