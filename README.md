@@ -13,5 +13,7 @@
    Xt=normr(zscore(Xt));
    
    The preprocessing method follows JGSA https://documents.uow.edu.au/~jz960/.
+   
+ 4. The original code is written using Matlab R2019a. 
 
 
