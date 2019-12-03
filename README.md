@@ -15,5 +15,6 @@
    The preprocessing method follows JGSA https://documents.uow.edu.au/~jz960/.
    
  4. The original code is written using Matlab R2019a. 
-
+ 
+ 5. There are 98 open set domain adaptation tasks.
 
