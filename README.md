@@ -18,3 +18,15 @@
  
  5. There are 98 open set domain adaptation tasks.
 
+ 6. If using the code, please cite paper:
+ Open set domain adaptation: theoretical bound and algorithms. In TNNLS
+
+@ARTICLE{9186366,
+  author={Fang, Zhen and Lu, Jie and Liu, Feng and Xuan, Junyu and Zhang, Guangquan},
+  journal={IEEE Transactions on Neural Networks and Learning Systems}, 
+  title={Open Set Domain Adaptation: Theoretical Bound and Algorithm}, 
+  year={2020},
+  volume={},
+  number={},
+  pages={1-14},
+  doi={10.1109/TNNLS.2020.3017213}}
